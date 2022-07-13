@@ -10,7 +10,7 @@ p {
     text-overflow: ellipsis;
 }
 
-#movie-container {
+.movie-container {
     width: 220px;
     overflow: hidden;
 }

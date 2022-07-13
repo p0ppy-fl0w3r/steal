@@ -20,36 +20,36 @@ class MovieItem extends React.Component {
 
         let mGenre;
 
-        if(this.props.genre){
-            if(this.props.genre.length > 1){
-                mGenre = this.props.genre.slice(0,2)
+        if (this.props.genre) {
+            if (this.props.genre.length > 1) {
+                mGenre = this.props.genre.slice(0, 2)
             }
-            else{
+            else {
                 mGenre = this.props.genre
             }
         }
 
-       return mGenre?.map((genre) => {
-            return <p>{genre}</p>
+        return mGenre?.map((genre, index) => {
+            return <p key={this.props.id + "-genre" + "-" + index}>{genre}</p>
         })
     }
 
     render() {
         return (
-            <div id="movie-container" >
+            <div className="movie-container" id={this.props.id + "-container"}>
                 <div id='hover-container'
                     onMouseEnter={() => {
-                        let extraInfo = document.getElementById(this.props.movieTitle);
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info");
                         extraInfo.style.display = 'flex'
                     }}
 
                     onMouseLeave={() => {
-                        let extraInfo = document.getElementById(this.props.movieTitle);
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info");
                         extraInfo.style.display = 'none'
                     }}
                 >
                     <img id="movie-image" src={this.props.movieImage} alt={this.props.movieTitle} />
-                    <div id={this.props.movieTitle} className='extra-movie-info'>
+                    <div id={this.props.id + "-movie-info"} className='extra-movie-info'>
                         <div id='rating'>
                             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' alt='rating' />
                             <p>{this.props.rating}</p>
@@ -71,8 +71,8 @@ class MovieItem extends React.Component {
                 </p>
                 <div id='quality-div'>
                     {
-                        this.props.availableQuality?.map((quality) => {
-                            return <a href='#' className='movie-quality'>{quality}</a>
+                        this.props.availableQuality?.map((quality, index) => {
+                            return <a href='#' className='movie-quality' key={index + "-a-key-" + this.props.id}>{quality}</a>
                         })
                     }
                 </div>
