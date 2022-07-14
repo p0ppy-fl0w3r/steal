@@ -1,7 +1,37 @@
+body{
+    margin: 0;
+}
+
 #home-container {
     font-family: 'Poppins', sans-serif;
     color: white;
-    margin: 0 20%;
+
+}
+
+#background-blur, #background-div{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: 720px;
+}
+
+#background-div {
+    z-index: -3;
+}
+
+#background-blur{
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 25, 27, 1));
+    z-index: -2;
+}
+
+#background-div img{
+    object-fit: cover;
+    width: 100%;
+    filter: blur(10px);
+    height: 700px;
 }
 
 #title-area {
@@ -26,19 +56,30 @@
     justify-content: center;
 }
 
-#popular-heading img{
+#popular-heading img {
     height: 1.2em;
     width: 1.2em;
     margin-right: 15px;
 }
 
-
-#popular-area{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+#upcoming-area{
+    padding-top: 10px;
+    background-color: rgb(20,20,20);
 }
 
-#popular-area .movie-container{
+
+.movie-list-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    align-items: center;
     margin: 15px 25px;
+}
+
+.movie-container {
+    margin: 15px 25px;
+}
+
+.container {
+    margin: 0 20%;
 }

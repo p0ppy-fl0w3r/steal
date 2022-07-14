@@ -20,35 +20,71 @@ class Home extends React.Component {
         );
     }
 
+    showMovieList(movieList) {
+        return (movieList?.map((movie) => {
+            return <MovieItem
+                id={movie.id}
+                movieImage={movie.movieImage}
+                movieTitle={movie.movieTitle}
+                lang={movie.lang}
+                year={movie.year}
+                availableQuality={movie.availableQuality}
+                rating={movie.rating}
+                genre={movie.genre}
+                key={movie.id + "-key"}
+            />
+        }));
+    }
+
     render() {
         return (
+            <div>
+                <div id='background-div'>
+                    <img src='https://animeukiyo.com/wp-content/uploads/2021/08/ghost-in-the-shell.jpg'></img>
+                </div>
+                <div id='background-blur'></div>
+                <div id='home-container'>
+                    <div id='head-area' className='container'>
+                        {this.titleHeading()}
+                        <h2 id='popular-heading'>
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' />
+                            Popular Downloads
+                        </h2>
+                        <hr />
+                    </div>
 
-            <div id='home-container'>
-                <div id='head-area'>
-                    {/* TODO add background image */}
-                    {this.titleHeading()}
-                    <h2 id='popular-heading'>
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' />
-                        Popular Downloads
-                    </h2>
+                    <div id='popular-area' className='container movie-list-area'>
+
+                        {this.showMovieList(this.props.popularList)}
+
+                    </div>
+                    <div id='latest-area' className='container'>
+                        <h2>
+                            Latest movie torrent to steal
+                        </h2>
+
+                        <div id='latest-movies' className='movie-list-area'>
+
+                            {this.showMovieList(this.props.latestList)}
+
+                        </div>
+                    </div>
+
+                    <div id='upcoming-area'>
+                        <div className='container'>
+                            <h2>
+                                Upcoming Movies
+                            </h2>
+                            <div id='upcoming-movies' className='movie-list-area'>
+
+
+                                {this.showMovieList(this.props.upcomingList)}
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <hr />
-                <div id='popular-area'>
-                    
-                    {this.props.popularList?.map((movie) => {
-                        return <MovieItem
-                            id={movie.id}
-                            movieImage={movie.movieImage}
-                            movieTitle={movie.movieTitle}
-                            lang={movie.lang}
-                            year={movie.year}
-                            availableQuality={movie.availableQuality}
-                            rating={movie.rating}
-                            genre={movie.genre}
-                            key = {movie.id+"-key"}
-                        />
-                    })}
-                </div>
+
             </div>
 
         );
