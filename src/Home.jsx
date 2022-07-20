@@ -4,9 +4,6 @@ import './home.css'
 
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
     titleHeading() {
         return (
@@ -15,12 +12,12 @@ class Home extends React.Component {
                 <article>
                     Welcome to the official Steal.com website. Here you can illegally download movies in excellent 720p, 1080p, 4k and 3D quality, all at the smallest size. Steal movie torrents.
                 </article>
-                <p><strong>IMPORTANT</strong> - Make sure you're cat is fat. </p>
+                <p><strong>IMPORTANT</strong> - Make sure your cat is fat. </p>
             </div>
         );
     }
 
-    showMovieList(movieList) {
+    showMovieList(movieList, key_param = "") {
         return (movieList?.map((movie) => {
             return <MovieItem
                 id={movie.id}
@@ -31,7 +28,8 @@ class Home extends React.Component {
                 availableQuality={movie.availableQuality}
                 rating={movie.rating}
                 genre={movie.genre}
-                key={movie.id + "-key"}
+                key_param={key_param}
+                key={movie.id + "-key" + key_param}
             />
         }));
     }
@@ -40,14 +38,14 @@ class Home extends React.Component {
         return (
             <div>
                 <div id='background-div'>
-                    <img src='https://animeukiyo.com/wp-content/uploads/2021/08/ghost-in-the-shell.jpg'></img>
+                    <img src='https://animeukiyo.com/wp-content/uploads/2021/08/ghost-in-the-shell.jpg' alt=''></img>
                 </div>
                 <div id='background-blur'></div>
                 <div id='home-container'>
                     <div id='head-area' className='container'>
                         {this.titleHeading()}
                         <h2 id='popular-heading'>
-                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' />
+                            <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' alt='' />
                             Popular Downloads
                         </h2>
                         <hr />
@@ -55,7 +53,7 @@ class Home extends React.Component {
 
                     <div id='popular-area' className='container movie-list-area'>
 
-                        {this.showMovieList(this.props.popularList)}
+                        {this.showMovieList(this.props.popularList, "-popular")}
 
                     </div>
                     <div id='latest-area' className='container'>
@@ -65,7 +63,7 @@ class Home extends React.Component {
 
                         <div id='latest-movies' className='movie-list-area'>
 
-                            {this.showMovieList(this.props.latestList)}
+                            {this.showMovieList(this.props.latestList, "-latest")}
 
                         </div>
                     </div>
@@ -78,7 +76,7 @@ class Home extends React.Component {
                             <div id='upcoming-movies' className='movie-list-area'>
 
 
-                                {this.showMovieList(this.props.upcomingList)}
+                                {this.showMovieList(this.props.upcomingList, "-upcoming")}
 
                             </div>
                         </div>

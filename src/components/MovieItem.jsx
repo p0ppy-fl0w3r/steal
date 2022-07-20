@@ -36,20 +36,20 @@ class MovieItem extends React.Component {
 
     render() {
         return (
-            <div className="movie-container" id={this.props.id + "-container"}>
+            <div className="movie-container" id={this.props.id + "-container" + this.props.key_param}>
                 <div id='hover-container'
                     onMouseEnter={() => {
-                        let extraInfo = document.getElementById(this.props.id + "-movie-info");
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info"+this.props.key_param);
                         extraInfo.style.display = 'flex'
                     }}
 
                     onMouseLeave={() => {
-                        let extraInfo = document.getElementById(this.props.id + "-movie-info");
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info"+this.props.key_param);
                         extraInfo.style.display = 'none'
                     }}
                 >
                     <img id="movie-image" src={this.props.movieImage} alt={this.props.movieTitle} />
-                    <div id={this.props.id + "-movie-info"} className='extra-movie-info'>
+                    <div id={this.props.id + "-movie-info" + this.props.key_param} className='extra-movie-info'>
                         <div id='rating'>
                             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' alt='rating' />
                             <p>{this.props.rating}</p>
