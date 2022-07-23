@@ -34,17 +34,21 @@ class MovieItem extends React.Component {
         })
     }
 
+    moviePath() {
+        window.location.href = "/movie/" + this.props.id
+    }
+
     render() {
         return (
             <div className="movie-container" id={this.props.id + "-container" + this.props.key_param}>
                 <div id='hover-container'
                     onMouseEnter={() => {
-                        let extraInfo = document.getElementById(this.props.id + "-movie-info"+this.props.key_param);
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info" + this.props.key_param);
                         extraInfo.style.display = 'flex'
                     }}
 
                     onMouseLeave={() => {
-                        let extraInfo = document.getElementById(this.props.id + "-movie-info"+this.props.key_param);
+                        let extraInfo = document.getElementById(this.props.id + "-movie-info" + this.props.key_param);
                         extraInfo.style.display = 'none'
                     }}
                 >
@@ -59,7 +63,7 @@ class MovieItem extends React.Component {
                             {this.showGenre()}
                         </div>
 
-                        <button id='details-button'>View Details</button>
+                        <button id='details-button' onClick={() => this.moviePath()}>View Details</button>
                     </div>
                 </div>
                 <p id="movie-title">

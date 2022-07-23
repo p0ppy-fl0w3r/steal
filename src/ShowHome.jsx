@@ -8,6 +8,7 @@ let upcomingMovies = []
 
 function ShowHome() {
 
+    // It's pointless to change the params of the api. All queries return the same list of movies. 
     const { data: popular_data } = useQuery(['movie'], () =>
 
         fetch('https://yts.mx/api/v2/list_movies.json?limit=4').then(movie_data =>
@@ -42,8 +43,6 @@ function ShowHome() {
     popularList = getFilteredMovie(popular_data)
     latestMovies = getFilteredMovie(latest_data)
     upcomingMovies = getFilteredMovie(upcoming_data)
-
-    console.log(popularList)
 
 
     return (

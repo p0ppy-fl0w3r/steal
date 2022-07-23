@@ -89,5 +89,6 @@ class Home extends React.Component {
     }
 }
 
+// TODO add footer
 
 export default Home
