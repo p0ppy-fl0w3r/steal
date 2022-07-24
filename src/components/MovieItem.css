@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-p {
-    margin: 4px 0 4px 8px;
-    font-family: 'Poppins', sans-serif;
+
+.movie-container p {
     width: 210px;
     overflow: hidden;
     max-lines: 1;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin: 4px 0 4px 8px;
 }
 
 .movie-container {
@@ -41,6 +41,7 @@ p {
     flex-direction: column;
     justify-content: space-around;
     justify-items: center;
+    cursor: pointer;
 }
 
 #hover-container:hover {
@@ -78,7 +79,6 @@ p {
 .movie-quality {
     padding: 5px 5px 5px 5px;
     margin: 5px;
-    font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: rgba(226, 223, 210, 0.7);
     background-color: black;
@@ -96,7 +96,6 @@ p {
     padding: 5px;
     color: white;
     background-color: rgba(255, 69, 0, 1);
-    font-family: 'Poppins', sans-serif;
     font-size: larger;
     font-weight: bold;
     border: none;
@@ -105,23 +104,23 @@ p {
     transition: background-color 0.1s linear;
 }
 
-#details-button:hover{
+#details-button:hover {
     background-color: rgba(255, 69, 0, 0.85);
 }
 
-#rating img{
+#rating img {
     width: 33px;
     height: 30px;
 }
 
-.extra-movie-info div{
+.extra-movie-info div {
     display: flex;
     flex-direction: column;
     align-items: center;
-}   
+}
 
-.extra-movie-info div p{
+.extra-movie-info div p {
     font-size: x-large;
     font-weight: bolder;
     text-align: center;
-}   
+}

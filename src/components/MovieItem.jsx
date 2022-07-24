@@ -8,12 +8,12 @@ class MovieItem extends React.Component {
     }
 
     showLang() {
-        if (this.props.lang !== undefined) {
-            return (`[${this.props.lang}]`)
+        if (this.props.lang !== undefined && this.props.lang !== 'en') {
+            return (`[${this.props.lang}]`.toUpperCase())
         }
-        else {
-            return
-        }
+
+        return
+
     }
 
     showGenre() {
@@ -53,10 +53,11 @@ class MovieItem extends React.Component {
                     }}
                 >
                     <img id="movie-image" src={this.props.movieImage} alt={this.props.movieTitle} />
-                    <div id={this.props.id + "-movie-info" + this.props.key_param} className='extra-movie-info'>
+                    <div id={this.props.id + "-movie-info" + this.props.key_param}
+                     onClick={() => this.moviePath()} className='extra-movie-info'>
                         <div id='rating'>
                             <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Red_star.svg/1200px-Red_star.svg.png' alt='rating' />
-                            <p>{this.props.rating}</p>
+                            <p>{this.props.rating} / 10</p>
                         </div>
 
                         <div id='genre'>
