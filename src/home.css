@@ -24,6 +24,7 @@ body{
 
 #background-blur{
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(23, 25, 27, 1));
+    height: 820px;
     z-index: -2;
 }
 
@@ -31,7 +32,7 @@ body{
     object-fit: cover;
     width: 100%;
     filter: blur(10px);
-    height: 700px;
+    height: 800px;
 }
 
 #title-area {

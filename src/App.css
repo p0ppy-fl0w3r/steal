@@ -1,6 +1,37 @@
-#not-found-heading{
-    font-family: 'Poppins', sans-serif;
+#not-found-heading {
     width: 100%;
     text-align: center;
     color: white;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.85);
+}
+
+.on-home {
+    width: 4.5em;
+    height: 4.5em;
+    display: inline-block;
+    background: url("./images/app-logo.png") center no-repeat;
+    background-size: 70%;
+}
+
+.away-from-home {
+    display: block;
+    width: 4.5em;
+    height: 4.5em;
+    display: inline-block;
+    background: url("./images/logo-white.png") center no-repeat;
+    background-size: 70%;
+}
+
+#content {
+    margin-top: 6em;
 }

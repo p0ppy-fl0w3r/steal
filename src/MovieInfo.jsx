@@ -284,8 +284,8 @@ function SimilarMovies(loading, error, data) {
                 {
                     data.data.movies.map((m) => {
                         return (
-                            <Tooltip title={m.title} trigger="mouseenter" >
-                                <img key={m.id + "-suggestion-key"} className='suggestion-poster' src={m.medium_cover_image} onClick={() => {
+                            <Tooltip key={m.id + "-suggestion-key"} title={m.title} trigger="mouseenter" >
+                                <img className='suggestion-poster' src={m.medium_cover_image} onClick={() => {
                                     suggestionPath(m.id)
                                 }} />
                             </Tooltip>
