@@ -17,11 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<ShowHome />} />
-
           <Route path='movie/:movieId' element={<MovieInfo />} />
-
-
-
           <Route path='*' element={
             <main>
               <h1 id='not-found-heading'>You should not be here!</h1>

@@ -76,8 +76,8 @@ class MovieItem extends React.Component {
                 </p>
                 <div id='quality-div'>
                     {
-                        this.props.availableQuality?.map((quality, index) => {
-                            return <a href='#' className='movie-quality' key={index + "-a-key-" + this.props.id}>{quality}</a>
+                        this.props.torrents?.map((t, index) => {
+                            return <a href={t.url} className='movie-quality' key={index + "-a-key-" + this.props.id}>{t.quality}</a>
                         })
                     }
                 </div>

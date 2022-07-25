@@ -25,9 +25,9 @@ class Home extends React.Component {
                 movieTitle={movie.movieTitle}
                 lang={movie.lang}
                 year={movie.year}
-                availableQuality={movie.availableQuality}
                 rating={movie.rating}
                 genre={movie.genre}
+                torrents={movie.torrents}
                 key_param={key_param}
                 key={movie.id + "-key" + key_param}
             />

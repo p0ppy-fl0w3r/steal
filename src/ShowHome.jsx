@@ -59,9 +59,9 @@ function getFilteredMovie(movieData) {
                 movieTitle: r_movie.title_english,
                 lang: r_movie.language,
                 year: r_movie.year,
-                availableQuality: r_movie.torrents.map((t) => { return t.quality }),
                 rating: r_movie.rating,
                 genre: r_movie.genres,
+                torrents: r_movie.torrents
 
             }
         }

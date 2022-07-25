@@ -3,3 +3,15 @@ body{
     color: white;
     font-family: 'Poppins', sans-serif;
 }
+
+#root{
+    min-height: 100vh;
+    
+}
+
+footer{
+    padding: 2em ;
+    text-align: center;
+    background-color: rgb(10, 10, 10);
+    margin-top: 1em;
+}

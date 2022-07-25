@@ -178,8 +178,6 @@ function cast(movieDetail) {
     )
 }
 
-
-
 function screenCaps(movie) {
     return (
         <div id='screen-caps'>
@@ -193,8 +191,23 @@ function screenCaps(movie) {
 function moviePosters(movieDetail) {
     return (<div id='movie-poster'>
         <img id='poster-image' src={movieDetail.coverImage} alt="Movie Poster" />
-        <button className='movie-button poster-button' id='download-button'> <div className='button-container'> <FileDownloadIcon />Download </div> </button>
-        <button className='movie-button poster-button' id='watch-button'> <div className='button-container'> <PlayArrowIcon />Watch Now</div></button>
+
+        <button className='movie-button poster-button' id='download-button' onClick={() => {
+            window.open(movieDetail.torrents[0].url)
+        }} >
+            <div className='button-container'>
+                <FileDownloadIcon />Download
+            </div>
+        </button>
+
+        <button className='movie-button poster-button' id='watch-button' onClick={() => {
+            window.open("http://www.youtube.com/watch?v=" + movieDetail.youtubeCode)
+        }}>
+            <div className='button-container'>
+                <PlayArrowIcon />Watch Trailer
+            </div>
+        </button>
+
     </div>)
 }
 
